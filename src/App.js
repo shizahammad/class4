@@ -1,24 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+
 import './App.css';
 
 function App() {
+  const [numberOfFruits, setNumberOfFruits] = useState({bananas: 0, apples: 3, peaches: 2})
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+  <p>Bananas count: {numberOfFruits.bananas} Apple count : {numberOfFruits.apples}</p>
+     <button onClick={() => setNumberOfFruits({ ...numberOfFruits, bananas: 2 })}>Banana</button> 
+     <button onClick={() => setNumberOfFruits({ ...numberOfFruits, apples: 4 })}>Apple</button> 
     </div>
   );
 }
